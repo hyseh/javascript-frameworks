@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import styles from './style.module.css';
 import ProductCard from '../../components/Cards/ProductCard';
 
 export default function Home() {
@@ -32,7 +33,7 @@ export default function Home() {
       {loading && <div>Loading...</div>}
       {products && (
         <section>
-          <div>
+          <div className={styles.grid}>
             {products.map(
               ({ id, title, description, price, discountedPrice, image }) => {
                 return (
