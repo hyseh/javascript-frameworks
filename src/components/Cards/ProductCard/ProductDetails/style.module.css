@@ -1,0 +1,11 @@
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
