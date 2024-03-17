@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 
-export default function Nav({ active } = props) {
+export default function Nav({ isActive, setIsActive }) {
   const routes = [
     {
       title: 'Home',
@@ -14,12 +14,19 @@ export default function Nav({ active } = props) {
   ];
 
   return (
-    <nav className={`${styles.nav} ${active ? styles.active : ''}`}>
+    <nav className={`${styles.nav} ${isActive ? styles.active : ''}`}>
       <ul>
         {routes.map((route, index) => {
           return (
             <li key={index}>
-              <Link to={route.href}>{route.title}</Link>
+              <Link
+                to={route.href}
+                onClick={() => {
+                  setIsActive(false);
+                }}
+              >
+                {route.title}
+              </Link>
             </li>
           );
         })}
