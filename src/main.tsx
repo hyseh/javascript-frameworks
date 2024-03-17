@@ -6,6 +6,7 @@ import './styles/global.css';
 import App from './App.tsx';
 import Home from './routes/Home';
 import Product from './routes/Product';
+import Cart from './routes/Cart';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/product/:id',
         element: <Product />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
     ],
   },
