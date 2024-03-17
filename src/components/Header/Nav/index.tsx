@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import { ShoppingCart } from 'react-feather';
 import styles from './style.module.css';
 
 export default function Nav({ isActive, setIsActive }) {
-  const routes = [
+  const primaryRoutes = [
     {
       title: 'Home',
       href: '/',
@@ -13,24 +14,47 @@ export default function Nav({ isActive, setIsActive }) {
     },
   ];
 
+  const secondaryRoutes = [
+    {
+      icon: <ShoppingCart />,
+      title: 'Shopping Cart',
+      href: 'shopping-cart',
+    },
+  ];
+
   return (
     <nav className={`${styles.nav} ${isActive ? styles.active : ''}`}>
-      <ul>
-        {routes.map((route, index) => {
+      <div>
+        {primaryRoutes.map((route, index) => {
           return (
-            <li key={index}>
-              <Link
-                to={route.href}
-                onClick={() => {
-                  setIsActive(false);
-                }}
-              >
-                {route.title}
-              </Link>
-            </li>
+            <Link
+              key={index}
+              to={route.href}
+              onClick={() => {
+                setIsActive(false);
+              }}
+            >
+              {route.title}
+            </Link>
           );
         })}
-      </ul>
+      </div>
+      <div>
+        {secondaryRoutes.map((route, index) => {
+          return (
+            <Link
+              key={index}
+              to={'/cart'}
+              className={styles.icon}
+              onClick={() => {
+                setIsActive(false);
+              }}
+            >
+              {route.icon}
+            </Link>
+          );
+        })}
+      </div>
     </nav>
   );
 }

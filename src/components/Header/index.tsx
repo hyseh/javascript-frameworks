@@ -8,8 +8,10 @@ export default function Header() {
   return (
     <header>
       <div className={styles.header}>
-        <div className={styles.logo}>
-          <a href="/">Header</a>
+        <div>
+          <a href="/" className={styles.logo}>
+            Header
+          </a>
         </div>
         <button
           className={styles.button}
