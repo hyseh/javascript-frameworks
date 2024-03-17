@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styles from './style.module.css';
-import ProductDetails from './ProductDetails';
 import ProductImage from './ProductImage';
+import ProductDetails from './ProductDetails';
 import ProductPricing from './ProductPricing';
 
 export default function ProductCard({
@@ -13,6 +14,7 @@ export default function ProductCard({
 }) {
   return (
     <div className={styles.card}>
+      <Link to={`/product/${id}`} className={styles.link}></Link>
       <ProductImage image={image} title={title} />
       <div className={styles.details}>
         <ProductDetails title={title} description={description} />
