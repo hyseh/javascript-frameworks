@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  grid-gap: 16px;
+  margin: auto;
+  max-width: 1380px;
+}
+
+.image {
+  position: relative;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

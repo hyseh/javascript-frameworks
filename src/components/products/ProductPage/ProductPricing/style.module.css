@@ -1,0 +1,17 @@
+.pricing {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price,
+.discountedPrice {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.originalPrice {
+  font-size: 1.25rem;
+  text-decoration: line-through;
+}
