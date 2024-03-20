@@ -7,6 +7,7 @@ import App from './App.tsx';
 import Home from './routes/Home';
 import Product from './routes/Product';
 import Cart from './routes/Cart';
+import Contact from './routes/Contact';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
       },
     ],
   },
