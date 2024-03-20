@@ -4,9 +4,10 @@ import ProductDiscount from './ProductDiscount';
 import ProductImage from './ProductImage';
 import ProductPricing from './ProductPricing';
 import ProductReviews from './ProductReviews';
+import ProductRating from './ProductRating';
 
 export default function ProductPage({ product }) {
-  const { title, description, price, discountedPrice, image, reviews } =
+  const { title, description, price, discountedPrice, image, rating, reviews } =
     product;
   const discount = discountedPrice < price;
 
@@ -19,16 +20,12 @@ export default function ProductPage({ product }) {
         <ProductImage image={image} title={title} />
       </div>
       <div className={styles.details}>
+        <ProductRating rating={rating} />
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{description}</p>
-        <div className={styles.cart}>
-          <ProductPricing price={price} discountedPrice={discountedPrice} />
-          <CartButton />
-        </div>
-        <div>
-          <ProductReviews reviews={reviews} />
-        </div>
+        <ProductPricing price={price} discountedPrice={discountedPrice} />
       </div>
+      {reviews.length > 0 && <ProductReviews reviews={reviews} />}
     </div>
   );
 }
