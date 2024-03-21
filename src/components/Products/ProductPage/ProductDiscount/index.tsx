@@ -5,7 +5,7 @@ export default function ProductDiscount({ price, discountedPrice }) {
 
   return (
     <div className={styles.discount}>
-      <span>Spar {discount}%</span>
+      <span>Save {discount}%</span>
     </div>
   );
 }

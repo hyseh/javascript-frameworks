@@ -9,7 +9,7 @@ export default function ProductPricing({ price, discountedPrice }) {
         <>
           <p className={styles.discountedPrice}>
             <span className="sr-only">Discounted price is</span>
-            <span>{discountedPrice} kr</span>
+            <span>${discountedPrice}</span>
           </p>
           <p className={styles.originalPrice}>
             (<span className="sr-only">Original price was</span>
@@ -19,7 +19,7 @@ export default function ProductPricing({ price, discountedPrice }) {
       ) : (
         <p className={styles.price}>
           <span className="sr-only">Price is</span>
-          <span>{price} kr</span>
+          <span>${price} kr</span>
         </p>
       )}
     </div>
