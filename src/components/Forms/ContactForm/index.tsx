@@ -4,29 +4,31 @@ import { useForm } from 'react-hook-form';
 import styles from './style.module.css';
 import Input from './Input';
 import Textarea from './Textarea';
+import PrimaryButton from '../../Buttons/PrimaryButton';
 
 const schema = yup
   .object({
     fullName: yup
       .string()
-      .min(3, 'Your name is too short')
-      .max(50, 'Your name is too long')
+      .min(3, 'Your name is too short.')
+      .max(50, 'Your name is too long.')
       .required(),
     email: yup
       .string()
-      .email('A valid email address is required')
-      .required('A email address is required'),
+      .email('A valid email address is required.')
+      .required('A email address is required.'),
     subject: yup
       .string()
-      .min(3, 'The subject is too short')
-      .max(100, 'The subject is too long')
+      .min(3, 'The subject is too short.')
+      .max(100, 'The subject is too long.')
       .required(),
     body: yup
       .string()
-      .min(3, 'The message is too short')
-      .max(1000, 'The message is too long')
+      .min(3, 'The message is too short.')
+      .max(1000, 'The message is too long.')
       .required(),
   })
+
   .required();
 
 export default function ContactForm() {
@@ -69,7 +71,7 @@ export default function ContactForm() {
       <div className={styles.wrapper}>
         <Input
           label={'Subject'}
-          placeholder={'Broken wind turbine'}
+          placeholder={`Cancel my order`}
           register={register}
           name={'subject'}
           options={{ required: true }}
@@ -80,14 +82,15 @@ export default function ContactForm() {
       <div className={styles.wrapper}>
         <Textarea
           label={'Your message'}
-          placeholder={`Hello, I think I broke one of your wind turbines.. I swear it was an accident though! I'm really, really sorry.`}
+          placeholder={`Hello, I want to cancel my order because I accidentally order too many! `}
           register={register}
           name={'body'}
           options={{ required: true }}
           error={errors.body}
         />
+        <p>{errors.body?.message}</p>
       </div>
-      <button onClick={() => onSubmit}>Contact</button>
+      <PrimaryButton onClick={() => onSubmit}>Contact</PrimaryButton>
     </form>
   );
 }
