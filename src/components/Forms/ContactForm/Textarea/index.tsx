@@ -13,8 +13,9 @@ export default function Textarea({
       <label htmlFor={name}>{label}</label>
       <textarea
         className={styles.textarea}
+        id={name}
         placeholder={placeholder}
-        {...(register(name), { options })}
+        {...register(name, { options })}
         aria-invalid={error ? 'true' : 'false'}
       ></textarea>
     </>

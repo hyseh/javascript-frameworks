@@ -13,6 +13,7 @@ export default function Input({
       <label htmlFor={name}>{label}</label>
       <input
         className={styles.input}
+        id={name}
         placeholder={placeholder}
         {...register(name, { options })}
         aria-invalid={error ? 'true' : 'false'}
