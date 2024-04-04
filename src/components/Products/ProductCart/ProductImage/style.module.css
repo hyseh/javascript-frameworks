@@ -1,0 +1,11 @@
+.image {
+  height: 120px;
+  width: 120px;
+}
+
+.image img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
