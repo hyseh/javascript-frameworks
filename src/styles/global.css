@@ -35,6 +35,12 @@ footer {
   width: 100%;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: black;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
