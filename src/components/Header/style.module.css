@@ -3,7 +3,7 @@ header {
   top: 0;
   left: 0;
   background-color: #f5f5f5;
-  padding: 16px;
+  padding: 8px;
   width: 100%;
   z-index: 100;
 }
@@ -19,19 +19,35 @@ header {
 }
 
 .logo {
-  padding: 0px;
-  font-size: 1rem;
-  z-index: 100;
+  height: 100%;
 }
 
-.button {
-  padding: 0px;
-  background: none;
-  border: none;
-  color: black;
+.logo a {
+  padding: 8px;
   font-size: 1rem;
+}
+
+.mobile {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.menuButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8px;
+  background-color: transparent;
+  color: black;
+  border: none;
   cursor: pointer;
-  z-index: 100;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.desktop {
+  display: none;
 }
 
 @media (min-width: 540px) {
@@ -39,11 +55,11 @@ header {
     position: static;
   }
 
-  .logo {
-    padding: 8px;
+  .mobile {
+    display: none;
   }
 
-  .button {
-    display: none;
+  .desktop {
+    display: inline;
   }
 }
