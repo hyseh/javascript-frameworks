@@ -6,8 +6,9 @@ import './styles/global.css';
 import App from './App.tsx';
 import Home from './routes/Home';
 import Product from './routes/Product';
-import Cart from './routes/Cart';
 import Contact from './routes/Contact';
+import Checkout from './routes/Checkout';
+import Success from './routes/Success/index.tsx';
 
 const router = createBrowserRouter([
   {
@@ -23,12 +24,16 @@ const router = createBrowserRouter([
         element: <Product />,
       },
       {
-        path: '/cart',
-        element: <Cart />,
-      },
-      {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/checkout',
+        element: <Checkout />,
+      },
+      {
+        path: '/success',
+        element: <Success />,
       },
     ],
   },
