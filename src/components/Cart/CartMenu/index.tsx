@@ -31,53 +31,67 @@ export default function CartMenu({ setIsActive }) {
             <X />
           </button>
         </div>
-        <div className={styles.products}>
-          {cart.length === 0 ? (
+
+        {cart.length === 0 ? (
+          <>
             <div className={styles.empty}>
               <p>Your cart is empty.</p>
             </div>
-          ) : (
-            cart.map((product) => {
-              const {
-                id,
-                title,
-                description,
-                price,
-                discountedPrice,
-                image,
-                quantity,
-              } = product;
-              return (
-                <ProductCart
-                  key={id}
-                  product={product}
-                  title={title}
-                  description={description}
-                  price={price}
-                  discountedPrice={discountedPrice}
-                  image={image}
-                  quantity={quantity}
-                />
-              );
-            })
-          )}
-        </div>
-        <div className={styles.details}>
-          <hr />
-          <p className={styles.pricing}>
-            <span>Total price:</span>
-            <span>${cartPricing}</span>
-          </p>
-          <Link
-            to="/cart"
-            className={styles.checkout}
-            onClick={() => {
-              setIsActive(false);
-            }}
-          >
-            Checkout
-          </Link>
-        </div>
+            <Link
+              to="/"
+              className={styles.storeButton}
+              onClick={() => {
+                setIsActive(false);
+              }}
+            >
+              Go to store
+            </Link>
+          </>
+        ) : (
+          <>
+            <div className={styles.products}>
+              {cart.map((product) => {
+                const {
+                  id,
+                  title,
+                  description,
+                  price,
+                  discountedPrice,
+                  image,
+                  quantity,
+                } = product;
+                return (
+                  <ProductCart
+                    key={id}
+                    product={product}
+                    title={title}
+                    description={description}
+                    price={price}
+                    discountedPrice={discountedPrice}
+                    image={image}
+                    quantity={quantity}
+                  />
+                );
+              })}
+            </div>
+            <div className={styles.details}>
+              <hr />
+              <p className={styles.pricing}>
+                <span>Total price:</span>
+                <span>${cartPricing}</span>
+              </p>
+              <Link
+                to="/checkout"
+                className={styles.checkoutButton}
+                onClick={() => {
+                  setIsActive(false);
+                }}
+              >
+                Checkout
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
