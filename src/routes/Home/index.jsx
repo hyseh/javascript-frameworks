@@ -39,8 +39,8 @@ export default function Home() {
   return (
     <>
       {error && <div>{error}</div>}
-      {loading && <div>Loading...</div>}
-      {products && (
+      {loading && <div className={styles.container}>Loading...</div>}
+      {products.length > 0 && (
         <>
           <section>
             <div className={styles.container}>

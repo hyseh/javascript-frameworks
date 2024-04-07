@@ -32,7 +32,7 @@ export default function Product() {
   return (
     <>
       {error && <div>{error}</div>}
-      {loading && <div>Loading...</div>}
+      {loading && <div className={styles.container}>Loading...</div>}
       {product && (
         <section>
           <ProductPage product={product} />
