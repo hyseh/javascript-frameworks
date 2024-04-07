@@ -23,8 +23,10 @@ export default function ProductPage({ product }) {
       </div>
       <div className={styles.details}>
         <ProductRating rating={rating} />
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <div>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.description}>{description}</p>
+        </div>
         <ProductPricing price={price} discountedPrice={discountedPrice} />
         <PrimaryButton onClick={() => addProduct(product)}>
           Add to cart

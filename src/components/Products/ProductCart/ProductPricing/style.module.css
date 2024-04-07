@@ -4,13 +4,20 @@
   align-items: flex-end;
 }
 
-.price,
+.price {
+  color: var(--black);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
 .discountedPrice {
+  color: var(--orange);
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .originalPrice {
+  color: var(--gray);
   font-size: 1rem;
   text-decoration: line-through;
 }

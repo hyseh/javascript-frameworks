@@ -33,6 +33,7 @@ export default function Nav({ isActive, setIsActive }) {
             <Link
               key={index}
               to={route.href}
+              className={styles.link}
               onClick={() => setIsActive(false)}
             >
               {route.title}

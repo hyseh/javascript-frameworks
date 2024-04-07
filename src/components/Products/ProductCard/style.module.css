@@ -4,6 +4,13 @@
   gap: 12px;
   position: relative;
   padding: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+.card:hover {
+  background-color: var(--card-hover-color);
 }
 
 .link {

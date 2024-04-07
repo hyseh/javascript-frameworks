@@ -5,7 +5,7 @@ export default function Input({ value, onChange }) {
   return (
     <div className={styles.container}>
       <div className={styles.icon}>
-        <Search />
+        <Search stroke="#8e8e8e" />
       </div>
       <input
         className={styles.input}
