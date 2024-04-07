@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .form {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1260px) {
+  .form {
+    width: 60%;
+  }
+}
