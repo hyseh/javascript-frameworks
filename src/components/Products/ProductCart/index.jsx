@@ -35,18 +35,18 @@ export default function ProductCart({
         </div>
         <div className={styles.buttons}>
           <button
-            className={styles.addButton}
-            onClick={() => addProduct(product)}
-          >
-            <span className="sr-only">Increase quantity</span>
-            <PlusCircle />
-          </button>
-          <button
             className={styles.removeButton}
             onClick={() => removeProduct(product)}
           >
             <span className="sr-only">Decrease quantity</span>
             <MinusCircle />
+          </button>
+          <button
+            className={styles.addButton}
+            onClick={() => addProduct(product)}
+          >
+            <span className="sr-only">Increase quantity</span>
+            <PlusCircle />
           </button>
         </div>
       </div>
