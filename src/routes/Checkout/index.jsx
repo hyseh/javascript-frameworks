@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 import { useCartStore } from '../../hooks/store';
+import LinkButton from '../../components/Buttons/LinkButton';
 import PaymentForm from '../../components/Forms/PaymentForm';
 import CartOverview from '../../components/Cart/CartOverview';
 
@@ -14,15 +14,7 @@ export default function Checkout() {
           <div className={styles.container}>
             <h2>Your order could not be completed</h2>
             <p>You do not have any products in your shopping cart.</p>
-            <Link
-              to="/"
-              className={styles.startButton}
-              onClick={() => {
-                setIsActive(false);
-              }}
-            >
-              Start Shopping
-            </Link>
+            <LinkButton to={'/'}>Start shopping</LinkButton>
           </div>
         </div>
       ) : (

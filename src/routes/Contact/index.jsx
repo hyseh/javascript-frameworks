@@ -1,7 +1,7 @@
 import styles from './style.module.css';
-import ContactForm from '../../components/Forms/ContactForm';
 import ContactDetails from '../../components/Contact/ContactDetails';
 import ContactFaq from '../../components/Contact/ContactFaq';
+import ContactForm from '../../components/Forms/ContactForm';
 
 export default function Contact() {
   return (

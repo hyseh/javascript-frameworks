@@ -20,9 +20,7 @@ export default function Header() {
           <CartButton isActive={isCartActive} setIsActive={setIsCartActive} />
           <button
             className={styles.menuButton}
-            onClick={() => {
-              setIsNavActive(!isNavActive);
-            }}
+            onClick={() => setIsNavActive(!isNavActive)}
           >
             <span className="sr-only">Open navigation menu</span>
             <Menu />

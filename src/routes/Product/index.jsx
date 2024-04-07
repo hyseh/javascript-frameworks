@@ -18,7 +18,6 @@ export default function Product() {
           throw new Error('Failed to fetch data');
         }
         const data = await res.json();
-        console.log(data.data);
         setProduct(data.data);
         setLoading(false);
       } catch (error) {

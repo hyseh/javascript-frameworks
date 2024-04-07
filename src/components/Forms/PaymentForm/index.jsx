@@ -1,8 +1,11 @@
 import styles from './style.module.css';
+import { useCartStore } from '../../../hooks/store';
 import Input from './Input';
-import { Link } from 'react-router-dom';
+import LinkButton from '../../Buttons/LinkButton';
 
 export default function PaymentForm() {
+  const emptyCart = useCartStore((state) => state.emptyCart);
+
   return (
     <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
       <div className={styles.container}>
@@ -45,9 +48,9 @@ export default function PaymentForm() {
           </div>
         </div>
       </div>
-      <Link to={'/success'} className={styles.checkout}>
-        Place Order
-      </Link>
+      <LinkButton to={'/success'} onClick={() => emptyCart()}>
+        Place order
+      </LinkButton>
     </form>
   );
 }

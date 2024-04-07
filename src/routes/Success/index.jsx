@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 import { CheckCircle } from 'react-feather';
+import LinkButton from '../../components/Buttons/LinkButton';
 
 export default function Success() {
   return (
@@ -17,15 +17,7 @@ export default function Success() {
               A order confirmation with details was sent to your email.
             </span>
           </p>
-          <Link
-            to="/"
-            className={styles.continueButton}
-            onClick={() => {
-              setIsActive(false);
-            }}
-          >
-            Continue Shopping
-          </Link>
+          <LinkButton to={'/'}>Continue shopping</LinkButton>
         </div>
       </div>
     </section>

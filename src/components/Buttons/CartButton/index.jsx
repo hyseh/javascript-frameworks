@@ -7,25 +7,13 @@ export default function CartButton({ isActive, setIsActive }) {
   const cartQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div
-      className={styles.container}
-      onClick={() => {
-        setIsActive(!isActive);
-        console.log('clicked');
-      }}
-    >
+    <div className={styles.container} onClick={() => setIsActive(!isActive)}>
       {cartQuantity > 0 && (
         <div className={styles.quantity}>
           <span>{cartQuantity}</span>
         </div>
       )}
-      <button
-        className={styles.button}
-        onClick={() => {
-          setIsActive(!isActive);
-          console.log('clicked');
-        }}
-      >
+      <button className={styles.button} onClick={() => setIsActive(!isActive)}>
         <span className="sr-only">Open cart menu</span>
         <ShoppingCart />
       </button>

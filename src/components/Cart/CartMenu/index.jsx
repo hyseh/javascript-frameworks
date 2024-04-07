@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 import { useCartStore } from '../../../hooks/store';
 import { X } from 'react-feather';
+import LinkButton from '../../Buttons/LinkButton';
 import ProductCart from '../../Products/ProductCart';
 
 export default function CartMenu({ setIsActive }) {
@@ -12,20 +12,13 @@ export default function CartMenu({ setIsActive }) {
 
   return (
     <div>
-      <div
-        className={styles.backdrop}
-        onClick={() => {
-          setIsActive(false);
-        }}
-      ></div>
+      <div className={styles.backdrop} onClick={() => setIsActive(false)}></div>
       <div className={styles.menu}>
         <div className={styles.header}>
           <p className={styles.heading}>Your shopping cart</p>
           <button
             className={styles.closeButton}
-            onClick={() => {
-              setIsActive(false);
-            }}
+            onClick={() => setIsActive(false)}
           >
             <span className="sr-only">Close cart menu</span>
             <X />
@@ -37,15 +30,9 @@ export default function CartMenu({ setIsActive }) {
             <div className={styles.empty}>
               <p>Your cart is empty.</p>
             </div>
-            <Link
-              to="/"
-              className={styles.storeButton}
-              onClick={() => {
-                setIsActive(false);
-              }}
-            >
+            <LinkButton to={'/'} onClick={() => setIsActive(false)}>
               Go to store
-            </Link>
+            </LinkButton>
           </>
         ) : (
           <>
@@ -80,15 +67,9 @@ export default function CartMenu({ setIsActive }) {
                 <span>Total price:</span>
                 <span>${cartPricing}</span>
               </p>
-              <Link
-                to="/checkout"
-                className={styles.checkoutButton}
-                onClick={() => {
-                  setIsActive(false);
-                }}
-              >
+              <LinkButton to={'/checkout'} onClick={() => setIsActive(false)}>
                 Checkout
-              </Link>
+              </LinkButton>
             </div>
           </>
         )}

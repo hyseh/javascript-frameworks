@@ -20,9 +20,7 @@ export default function Nav({ isActive, setIsActive }) {
         <p className={styles.heading}>Navigation</p>
         <button
           className={styles.closeButton}
-          onClick={() => {
-            setIsActive(false);
-          }}
+          onClick={() => setIsActive(false)}
         >
           <span className="sr-only">Close navigation menu</span>
           <X />
@@ -35,9 +33,7 @@ export default function Nav({ isActive, setIsActive }) {
             <Link
               key={index}
               to={route.href}
-              onClick={() => {
-                setIsActive(false);
-              }}
+              onClick={() => setIsActive(false)}
             >
               {route.title}
             </Link>
