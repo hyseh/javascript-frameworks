@@ -1,0 +1,14 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+}
+
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
