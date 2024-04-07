@@ -2,11 +2,14 @@ section {
   margin: 16px;
 }
 
+.container {
+  margin: auto;
+  max-width: 1380px;
+}
+
 .grid {
   display: grid;
   grid-gap: 8px;
-  margin: auto;
-  max-width: 1380px;
 }
 
 @media (min-width: 540px) {
