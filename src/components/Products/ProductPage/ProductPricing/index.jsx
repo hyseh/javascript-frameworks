@@ -19,7 +19,7 @@ export default function ProductPricing({ price, discountedPrice }) {
       ) : (
         <p className={styles.price}>
           <span className="sr-only">Price is</span>
-          <span>${price} kr</span>
+          <span>${price}</span>
         </p>
       )}
     </div>
