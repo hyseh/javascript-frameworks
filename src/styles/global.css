@@ -6,6 +6,25 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background-color: rgb(245, 245, 245); /* #f5f5f5 */
+  --header-background-color: rgb(245, 245, 245); /* #f5f5f5 */
+  --footer-background-color: rgba(17, 24, 39); /* #111827 */
+
+  --card-hover-color: rgb(245, 245, 245); /* #f5f5f5 */
+
+  --primary-color: rgb(52, 87, 213); /* #3457d5 */
+  --secondary-color: rgb(); /*  */
+
+  --black: rgb(17, 17, 17); /* #111111 */
+  --gray: rgb(62, 62, 62); /* #3e3e3e  */
+  --white: rgb(255, 255, 255); /* ffffff */
+  --yellow: rgb(255, 204, 0); /* #ffcc00 */
+  --light-yellow: rgb(245, 224, 183); /* #f5e0b7 */
+  --gold: rgb(218, 165, 32); /* #daa520 */
+  --orange: rgb(255, 69, 0); /* #ff4500 */
+
+  --backdrop-color: rgba(0, 0, 0, 0.3); /*  */
 }
 
 * {
@@ -17,7 +36,8 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: var(--background-color);
+  color: var(--black);
 }
 
 #root {
@@ -25,11 +45,13 @@ body {
   flex-direction: column;
   min-width: 300px;
   min-height: 100vh;
-  background-color: #fff;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 footer {
-  background-color: #f5f5f5;
+  background-color: var(--footer-background-color);
+  color: var(--white);
   margin-top: auto;
   padding: 16px;
   width: 100%;
@@ -38,7 +60,7 @@ footer {
 hr {
   border: none;
   height: 1px;
-  background-color: black;
+  background-color: var(--black);
 }
 
 .sr-only {
