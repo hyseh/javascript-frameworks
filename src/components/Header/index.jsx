@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './style.module.css';
 import { Menu } from 'react-feather';
 import Nav from './Nav';
-import CartButton from '../Cart/CartButton';
+import CartButton from '../Buttons/CartButton';
 import CartMenu from '../Cart/CartMenu';
 
 export default function Header() {
