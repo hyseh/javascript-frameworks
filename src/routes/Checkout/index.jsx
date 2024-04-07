@@ -1,51 +1,44 @@
+import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 import { useCartStore } from '../../hooks/store';
 import PaymentForm from '../../components/Forms/PaymentForm';
-import ProductCart from '../../components/Products/ProductCart';
+import CartOverview from '../../components/Cart/CartOverview';
 
 export default function Checkout() {
   const cart = useCartStore((state) => state.shoppingCart);
 
   return (
     <section>
-      <div className={styles.grid}>
-        <div className={styles.container}>
-          <h2>Your information</h2>
-          <PaymentForm />
+      {cart.length === 0 ? (
+        <div className={styles.empty}>
+          <div className={styles.container}>
+            <h2>Your order could not be completed</h2>
+            <p>You do not have any products in your shopping cart.</p>
+            <Link
+              to="/"
+              className={styles.startButton}
+              onClick={() => {
+                setIsActive(false);
+              }}
+            >
+              Start Shopping
+            </Link>
+          </div>
         </div>
-        <div className={styles.container}>
-          <h2>Your shopping cart</h2>
-          {cart.length === 0 ? (
-            <div className={styles.empty}>
-              <p>Your cart is empty.</p>
+      ) : (
+        <>
+          <div className={styles.grid}>
+            <div className={styles.container}>
+              <h2>Your information</h2>
+              <PaymentForm />
             </div>
-          ) : (
-            cart.map((product) => {
-              const {
-                id,
-                title,
-                description,
-                price,
-                discountedPrice,
-                image,
-                quantity,
-              } = product;
-              return (
-                <ProductCart
-                  key={id}
-                  product={product}
-                  title={title}
-                  description={description}
-                  price={price}
-                  discountedPrice={discountedPrice}
-                  image={image}
-                  quantity={quantity}
-                />
-              );
-            })
-          )}
-        </div>
-      </div>
+            <div className={styles.container}>
+              <h2>Your shopping cart</h2>
+              <CartOverview />
+            </div>
+          </div>
+        </>
+      )}
     </section>
   );
 }
